@@ -1,6 +1,6 @@
 cask "aibattery" do
-  version "1.2.2"
-  sha256 "7aa17f37646288e92df7a801e57a12eebc38f54e427d7277f47ac68831573be5"
+  version "1.2.3"
+  sha256 "5a7feef76dbc8400c6bf8f21bb14a8a15e68928c5d19b6b08f6230da34c5fdd0"
 
   url "https://github.com/KyleNesium/AIBattery/releases/download/v#{version}/AIBattery.zip"
   name "AI Battery"
