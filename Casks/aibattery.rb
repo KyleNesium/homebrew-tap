@@ -4,10 +4,10 @@ cask "aibattery" do
 
   url "https://github.com/KyleNesium/AIBattery/releases/download/v#{version}/AIBattery.zip"
   name "AI Battery"
-  desc "Battery meter for Claude Code — rate limits, context health, and token usage in your menu bar"
+  desc "Claude Code rate limits, context health, and token usage in your menu bar"
   homepage "https://github.com/KyleNesium/AIBattery"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "AIBattery.app"
 
@@ -16,9 +16,7 @@ cask "aibattery" do
                    args: ["-cr", "#{appdir}/AIBattery.app"]
   end
 
-  zap trash: [
-    "~/Library/Preferences/com.KyleNesium.AIBattery.plist",
-  ]
+  zap trash: "~/Library/Preferences/com.KyleNesium.AIBattery.plist"
 
   caveats <<~EOS
     AI Battery requires a Claude Code subscription with API access.
