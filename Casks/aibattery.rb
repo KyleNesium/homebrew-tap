@@ -11,9 +11,11 @@ cask "aibattery" do
 
   app "AIBattery.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/AIBattery.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-cr", "{{appdir}}/AIBattery.app"],
+        writable_paths: ["AIBattery.app"],
+        writable_base:  :appdir
   end
 
   zap trash: "~/Library/Preferences/com.KyleNesium.AIBattery.plist"
